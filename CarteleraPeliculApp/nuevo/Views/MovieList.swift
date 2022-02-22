@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MovieList: View {
+    @StateObject var viewModel = APIRequest()
+    let currentDate = Date()
     var body: some View {
         NavigationView {
-            List(movies){ movie in
+            List(viewModel.movies){ movie in
 
                 NavigationLink{
                     MovieDetail(movie: movie)
@@ -18,12 +20,22 @@ struct MovieList: View {
                     MovieRow(movie: movie)
                 }
             }
-            .navigationTitle(" Landmarks")
+            .navigationTitle("Chamuel \(currentDate.formatted(date: .abbreviated, time: .omitted))")
+            .foregroundColor(Color("Color01"))
+            
+            
+            .onAppear {
+                viewModel.fetch()
+            }
+            .background(.green)
+
         }
+        .background(.green)
     }
+        
 }
 
-struct LandmarkList_Previews: PreviewProvider {
+struct MovieList_Previews: PreviewProvider {
     static var previews: some View {
         MovieList()
     }

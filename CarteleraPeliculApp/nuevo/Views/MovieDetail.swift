@@ -8,50 +8,65 @@
 import SwiftUI
 
 struct MovieDetail: View {
+    
     var movie: Movie
     
     var body: some View {
-        ScrollView {
-            Image("shawshank")
-                .ignoresSafeArea(edges: .top)
-                .frame( height: 300)
+        ScrollView() {
             
-//            CircleImage(image: Image("shawshank"))
-//                .offset(y: -130)
-//                .padding(.bottom, -130)
-            VStack(alignment: .leading) {
-                Text(movie.name)
-                    .font(.title)
-                .foregroundColor(.black)
-                HStack {
-                    Text(movie.park)
-                        .font(.subheadline)
-                    Spacer()
-                    Text(movie.state)
-                        .font(.subheadline)
-                }
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                
-                Divider()
-                
-                Text("About \(movie.name)")
-                    .font(.title2)
-                Text(movie.description)
+            VStack() {
+                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500" + movie.poster_path)) { image in
+                image.resizable()
+            } placeholder: {
+                ProgressView()
             }
-            .padding()
+                
+                    .foregroundColor(Color.yellow)
+
+                    
+                                    .aspectRatio(contentMode: .fit)
+ 
+                
+                
+                
+                
+                Text(movie.original_title)
+                    .font(.title2)
+                    .multilineTextAlignment(.trailing)
+                    .foregroundColor(.black)
+                    .frame(maxWidth: .infinity,alignment: .center)
+                
+                
+                
+                
+                Text(String(movie.vote_average)+"/10")
+                    .font(.subheadline)
+                    .multilineTextAlignment(.trailing)
+                    .padding(.trailing)
+                    .frame(maxWidth: .infinity,alignment: .trailing)
+                    .foregroundColor(.secondary)
+                
+
+                
+                
+                Text(movie.overview)
+            .font(.subheadline)
+            .padding(.top,2)
+            }
             
         }
-        .navigationTitle(movie.name)
+        .navigationTitle(movie.original_title)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct MovieDetail_Previews: PreviewProvider {
+    @StateObject var viewModel = APIRequest()
+    
     static var previews: some View {
         Group {
-            MovieDetail(movie: movies[0])
-
+            MovieDetail(movie:Movie(id: 03, original_title: "La casita del horror", poster_path: "/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", overview: "Est d jjdfijgsinignidnigni   gigninsg eiinigngineie gngieg egijning", vote_average: 9.4))
+                .previewInterfaceOrientation(.portrait)
         }
     }
 }
