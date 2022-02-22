@@ -16,12 +16,12 @@ struct InitialsCircleLabelView: View {
         Text(titleInitials(movieName))
             .frame(width: 50, height: 50)
             .clipShape(Circle())
+            .foregroundColor(Color("Color03"))
         
             .overlay(
-                Circle().stroke(.gray)
+                Circle().stroke(Color("Color05"))
             )
     }
-    
     
     
     let titleInitials = { (movieName: String) -> String in

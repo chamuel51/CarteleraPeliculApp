@@ -28,8 +28,8 @@
 		50B8363627BEF65B003C6EE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50D43CD227BF07DF0053ED49 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = CarteleraPeliculApp/Models/Movie.swift; sourceTree = SOURCE_ROOT; };
 		50D43CD527BF07FE0053ED49 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = CarteleraPeliculApp/nuevo/Views/ContentView.swift; sourceTree = SOURCE_ROOT; };
-		50D43CD627BF07FE0053ED49 /* MovieDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 0; lastKnownFileType = sourcecode.swift; name = MovieDetail.swift; path = CarteleraPeliculApp/nuevo/Views/MovieDetail.swift; sourceTree = SOURCE_ROOT; tabWidth = 1; };
-		50D43CD827BF07FE0053ED49 /* MovieList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieList.swift; path = CarteleraPeliculApp/nuevo/Views/MovieList.swift; sourceTree = SOURCE_ROOT; };
+		50D43CD627BF07FE0053ED49 /* MovieDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; name = MovieDetail.swift; path = CarteleraPeliculApp/nuevo/Views/MovieDetail.swift; sourceTree = SOURCE_ROOT; tabWidth = 1; wrapsLines = 1; };
+		50D43CD827BF07FE0053ED49 /* MovieList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieList.swift; path = CarteleraPeliculApp/nuevo/Views/MovieList.swift; sourceTree = SOURCE_ROOT; tabWidth = 10; };
 		50D43CDA27BF07FE0053ED49 /* MovieRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieRow.swift; path = CarteleraPeliculApp/nuevo/Views/MovieRow.swift; sourceTree = SOURCE_ROOT; tabWidth = 10; usesTabs = 0; };
 /* End PBXFileReference section */
 

@@ -16,27 +16,19 @@ struct MovieDetail: View {
             
             VStack() {
                 AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500" + movie.poster_path)) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
-            }
-                
-                    .foregroundColor(Color.yellow)
-
-                    
-                                    .aspectRatio(contentMode: .fit)
- 
-                
-                
-                
+                    image.resizable()
+                } placeholder: {
+                    ProgressView()
+                }
+            
+                .foregroundColor(Color.yellow)
+                .aspectRatio(contentMode: .fit)
                 
                 Text(movie.original_title)
                     .font(.title2)
                     .multilineTextAlignment(.trailing)
-                    .foregroundColor(.black)
+                    .foregroundColor(.accentColor)
                     .frame(maxWidth: .infinity,alignment: .center)
-                
-                
                 
                 
                 Text(String(movie.vote_average)+"/10")
@@ -44,19 +36,17 @@ struct MovieDetail: View {
                     .multilineTextAlignment(.trailing)
                     .padding(.trailing)
                     .frame(maxWidth: .infinity,alignment: .trailing)
-                    .foregroundColor(.secondary)
-                
-
-                
+                    .foregroundColor(Color("Color02"))
                 
                 Text(movie.overview)
-            .font(.subheadline)
-            .padding(.top,2)
+                    .font(.caption)
+                    .foregroundColor(Color("Color04"))
+                    .padding([.leading, .trailing],10)
             }
-            
         }
         .navigationTitle(movie.original_title)
         .navigationBarTitleDisplayMode(.inline)
+        .background(Color("Color01"))
     }
 }
 
